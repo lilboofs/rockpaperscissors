@@ -1,0 +1,38 @@
+function getComputerChoice (min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random()*(maxFloored-minCeiled)+minCeiled);
+   
+}
+
+let computerSelection = (getComputerChoice(1,4))
+
+console.log (computerSelection)
+
+
+if (computerSelection == 1){
+computerSelection='rock';
+}else if (computerSelection == 2){
+    computerSelection='paper';
+ }else if (computerSelection==3){
+    computerSelection='scissors';
+ }
+
+    console.log (computerSelection)
+
+let input= prompt("Rock, paper or scissors?");
+let text;
+let playerSelection = input.toLowerCase();
+
+function playGame (playerSelection, computerSelection){
+    if ((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper'))
+    return 'Player Wins!'
+    else if ((playerSelection == 'rock' && computerSelection == 'rock') || (playerSelection == 'paper' && computerSelection == 'paper') || (playerSelection == 'scissors' && computerSelection == 'scissors'))
+    return 'You Tie! Try again'
+    else
+    return 'Player Loses!'
+
+}
+
+let result = playGame (playerSelection, computerSelection);
+console.log(result);
